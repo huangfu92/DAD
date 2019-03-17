@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="pt">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DAD  | Drag and Drop Plugin </title>
+    <meta name="keywords" content="dad, dag and drop, dag, drop, plugin jquery, plugin, jquery">
+    <meta name="description" content="A simple and awesome drag and drop plugin">
+    <meta property="og:title" content="DAD - drag and drop plugin" />
+    <meta property="og:image" content="http://www.konsolestudio.com.br/dad/og.png" />
+    <meta property="og:description" content="A simple and awesome drag and drop plugin" />
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="font/stylesheet.css">
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="../source/jquery.dad.css">
+    
+</head>
+<body>
+
+<div class="center">
+    <dev class="left">
+        <div class="left_lst">
+            <div>111</div>
+            <div>222</div>
+            <div>333</div>
+            <div>444</div>
+            <div>555</div>
+            <div>666</div>
+        </div>
+    </dev>
+    <dev class="right">
+        <dev class="right1 right_list">AA</dev>
+        <div class="right2 right_list">BB</div>
+        <dev class="right3 right_list">CC</dev>
+        <dev class="right4 right_list">DD</dev>
+        <dev class="right5 right_list">EE</dev>
+    </dev>
+</div>
+<script src="jquery.min.js"></script>
+<script src="../source/jquery.dad.js"></script>
+<script>
+$(function () {
+
+  //dad simple demo
+
+  //dad dropzone
+  var d = $('.left_lst').dad();
+  var target=$('.right1');
+  d.addDropzone(target, function (e) {
+    e.appendTo(target);
+   // e.remove();
+  });
+  var d1 = $('.left_lst').dad();
+  var target2 = $('.right2');
+    d1.addDropzone(target2, function (e) {
+        e.appendTo(target2);
+        // e.remove();
+    });
+    var d3 = $('.right2').dad();
+    d3.activate();
+    d3.addDropzone('.right1,.right3,.right4', function (e) {
+         e.remove();
+    });
+    $(".right_list").on("click","div",function(){
+        alert(11111)
+    })
+    // var A = $('span').dad();
+    // var target = $('.dropzone);
+    // d.addDropzone(target, function (e) {
+    //     e.find('span').appendTo(target);
+    //     // e.remove();
+    // });
+  
+});
+</script>
+</body>
+</html>
